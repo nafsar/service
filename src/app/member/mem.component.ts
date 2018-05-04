@@ -1,7 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MemService } from './mem.service';
-
-// namer import { Value } from './value';
 
 @Component({
   selector: 'app-mem',
@@ -20,7 +18,7 @@ export class MemComponent implements OnInit {
   constructor(private service: MemService) {
     const mth = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let mthval = mth[0];
-    this.title = 'Angular 4 App';
+    this.title = 'Angular 5 App';
     this.records = 'Participants';
     const d = new Date();
     mthval = mth[d.getMonth()];
@@ -28,9 +26,7 @@ export class MemComponent implements OnInit {
     this.day = d.getDate();
     this.year = d.getFullYear();
     this.fullDate = this.month + ' ' + this.day + ', ' + this.year;
-   //  this.values = service;
   }
-
 
   ngOnInit() {
     this.service.getValues().subscribe(res => {
