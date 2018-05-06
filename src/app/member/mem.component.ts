@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemService } from './mem.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-mem',
@@ -31,6 +32,8 @@ export class MemComponent implements OnInit {
   ngOnInit() {
     this.service.getValues().subscribe(res => {
       this.values = res;
-    });
+    },
+    (err: HttpErrorResponse) => { console.log(err.message); }
+  );
   }
 }
