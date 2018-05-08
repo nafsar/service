@@ -5,7 +5,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-mem',
   templateUrl: './mem.component.html',
-  styleUrls: ['./mem.component.css'],
+  styleUrls: ['./mem.component.css']
+
 })
 export class MemComponent implements OnInit {
   values: any;
@@ -33,7 +34,7 @@ export class MemComponent implements OnInit {
     this.service.getValues().subscribe(res => {
       this.values = res;
     },
-    (err: HttpErrorResponse) => { console.log(err.message); }
-  );
+      (err: HttpErrorResponse) => { console.log(err.message); }
+    );
   }
 }

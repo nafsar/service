@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 export class MemService {
     url: string;
     constructor(private http: Http) {
-        this.url = 'assts/test.json';
+        this.url = 'https://nafsar.github.io/demo/students.json';
     }
 
     getValues() {
